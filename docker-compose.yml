@@ -1,0 +1,23 @@
+version: "3.1"
+services:
+    webserver:
+      image: nginx:alpine
+      container_name: fps-webserver
+      working_dir: /application
+      volumes:
+          - ./application:/application
+          - ./sourcefiles/nginx:/etc/nginx/conf.d
+      ports:
+       - "80:80"
+      networks:
+            fps:
+    php-fpm:
+      build: sourcefiles/php-fpm
+      container_name: fps-php-fpm
+      working_dir: /application
+      volumes:
+        - ./application:/application
+      networks:
+          fps:
+networks:
+    fps:

@@ -1,0 +1,10 @@
+{
+	"autoload": {
+		"psr-4": {
+			"FPS\\Models\\": 			"src/models/",
+			"FPS\\Managers\\": 			"src/managers/",
+			"FPS\\Controllers\\": 		"src/controllers/",
+			"FPS\\DatabaseDrivers\\": 	"src/dblayer/"			
+		}
+	}
+}
