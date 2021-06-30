@@ -2,9 +2,9 @@
 
 namespace FPS\DatabaseDrivers;
 
-class PdoDatabaseDriver
+class PdoDatabaseDriver implements DatabaseDriverInterface
 {
-    function query($queryString, array $parameters): array
+    public function query($queryString, array $parameters): array
     {
         return [['id' => 2, 'username' => 'pdo-test']];
     }

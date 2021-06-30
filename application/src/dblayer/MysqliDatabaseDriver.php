@@ -2,7 +2,7 @@
 
 namespace FPS\DatabaseDrivers;
 
-class MysqliDatabaseDriver
+class MysqliDatabaseDriver implements DatabaseDriverInterface
 {
     public function query($queryString, array $parameters): array
     {

@@ -17,8 +17,8 @@ class BaseManager
 
     public function __construct(string $driverName = 'mysqli')
     {
-        if (is_null(self::$database)) {
-            self::setDatabaseDriver($driverName);
+        if (is_null(static::$database)) {
+            static::setDatabaseDriver($driverName);
         }        
     }
 
@@ -27,10 +27,10 @@ class BaseManager
         if (in_array($driverName, self::$databaseDrivers)) {
 
             if ($driverName === 'pdo') {
-                self::$database = new PdoDatabaseDriver();
+                static::$database = new PdoDatabaseDriver();
 
             } elseif ($driverName === 'mysqli') {
-                self::$database = new MysqliDatabaseDriver();
+                static::$database = new MysqliDatabaseDriver();
             }
 
             return true;
